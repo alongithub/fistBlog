@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>滚动条方向测试</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css" >
+	*{
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		margin: 20px;
+	}
+</style>
+<body >
+<div ></div>
+<div ></div>
+<div ></div>
+<div ></div>
+<div ></div>
+<div ></div>
+<div ></div>
+<script type="text/javascript">
+	var sign = 10;//定义默认的向上滚与向下滚的边界
+		window.onscroll = window.onresize = function(){
+		var  oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		if ( oScrollTop > sign) {
+		sign =  oScrollTop;//更新scrollTop
+		document.title='向下'+ oScrollTop;
+		}
+		if ( oScrollTop< sign) {
+		sign =  oScrollTop//更新scrollTop
+		document.title='向上'+ oScrollTop;
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>块到浏览器顶部的距离</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	*{
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		margin: 20px;
+	}
+	.top{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		border-top: 5px solid #000;
+	}
+	#div1{
+		background: #000;
+	}
+</style>
+<body>
+<div class="top" id="top">
+	
+</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="div1" ></div>
+<div></div>
+</body>
+<script type="text/javascript">
+	var div1 =document.getElementById('div1');
+	var top =document.getElementById('top');
+	window.onscroll = function () {
+		var  divScrollTop=div1.getBoundingClientRect().top;//判断块到浏览器可视区域顶部的距离
+		var  topScrollTop=top.scrollTop;
+		console.log(divScrollTop);
+		document.title= divScrollTop-topScrollTop;
+	}
+</script>
+</html>

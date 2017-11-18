@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>header</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<!-- header begin -->
+
+</body>
+</html>
+
+
+<!-- header begin -->
+<style type="text/css">
+	*{margin: 0;padding: 0;}
+	body{overflow-x: hidden;}
+	.headerbottom{height: 80px;background: rgba(0,0,0,0);position: absolute;width: 105%;z-index: 10;bottom: 0;color: #000;left: -2.5%;}
+	.headerTop{height: 80px;background: rgba(0,0,0,0);width: 105%;z-index: 10;top:0;color: #000;position: fixed;box-shadow: 0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left:-2.5%; }
+	.headerhidden{height: 0;position: fixed;top: -80px;background: rgba(0,0,0,0);width: 105%;z-index: 10;transition: 1s;box-shadow:0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left: -2.5%;}
+	.headeron{height: 80px;position: fixed;top: 0;background: rgba(0,0,0,0);width: 105%;z-index: 10;transition: 1s;box-shadow:0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left: -2.5%;}
+	#headerline{height: 0;position: absolute;top: 0px;}
+	.logo{width: 200px;height:80px;float: left;font-size: 25px;line-height:80px;text-align: center; color: #fff;background: url(icons/logo2.png) no-repeat ;background-size: 160% auto  ;background-position: 80px -10px; }
+	.navbar{width: 600px;float: right;height: 80px;}
+	.navbar ul li a{width: 50px;font-size: 20px;text-decoration: none;color: #fff;font-size: 16px;}
+	.navbar ul li:hover{text-shadow: 0px 0px 10px #fff;transform: scale(1.1);}
+	.navbar ul li{float: left;padding: 0 40px;text-align: center;line-height: 80px;list-style: none;}
+		/*返回顶部*/
+	#toheader{position: fixed;right: 20px;height: 60px;width: 60px;bottom:10px;background: rgba(0,0,0,0.5);border-radius: 50%;transition: 1s;cursor: pointer;opacity: 0;}
+	.toheader{border-radius: 50%;height: 60px;width: 60px;}
+	
+	.toheader:after{content: '';width: 25px;height: 25px;transform: rotate(-45deg);border-right:  2px solid #ccc;border-top: 2px solid #fff; position: absolute;left: 15.5px;top:22px;border-radius: 2px; }
+</style>
+	<div id="headerline"></div>
+	<div style="width: 100%;overflow: hidden;">
+		
+		<div id="header" class="headerTop">
+			<a class="logo" href="blog.html"></a>
+			<div class="navbar">
+				<ul>
+					<li><a href="blog.html">home</a></li>
+					<li><a href="#">works</a></li>
+					<li><a href="#">this's me</a></li>
+					<li><a href="#">contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- toheader -->
+	<div id="toheader" >
+		<div class="toheader" onclick="goscroll(0);">
+			
+		</div>
+	</div>
+<!-- toheader end -->
+	<script type="text/javascript">
+		var sign = 1000;//定义默认的向上滚与向下滚的边界
+var header = document.getElementById('header');
+var headerline = document.getElementById('headerline');
+
+/*--top导航栏及返回顶部的隐藏与出现  content的加载动画--*/
+var curr_content=1;
+var toheader = document.getElementById('toheader');
+	window.onscroll = function () {
+		var headerlineTop = headerline.getBoundingClientRect().top;//导航分界线，距离窗口可视区域顶部的距离
+		var  oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;//当前滚动条位置
+		if (oScrollTop<1000){
+			if (headerlineTop<=0) {
+			/*console.log('导航置顶');*/
+			header.className = 'headerTop';
+			}
+			else{
+				/*console.log('导航沉下');*/
+
+				header.className= 'headerbottom';
+			}
+			toheader.style.cssText +="bottom:10px;opacity:0;"
+		}
+		else{
+			if ( oScrollTop > (sign+200)) {
+			sign =  oScrollTop;//更新scrollTop
+			/*console.log('导航隐藏');*/
+			header.className = "headerhidden";
+			toheader.style.cssText +="bottom:10px;opacity:0;"
+			}
+			if ( oScrollTop< (sign-200) ) {
+			sign =  oScrollTop//更新scrollTop
+			/*console.log('导航出现');*/
+			header.className = "headeron";
+			toheader.style.cssText +="bottom:80px;opacity:1;"
+			}
+		}
+		
+
+		if (curr_content!=10) {
+			content[curr_content]=document.getElementById("content_"+curr_content).getBoundingClientRect().top;
+			if((content[curr_content]-100)<=0){
+					document.getElementById("content_"+curr_content).className+=' content'+curr_content+'end'+ ' contentend';
+					curr_content++;
+				
+				console.log("curr_content加加="+curr_content);
+			}	
+			/*if (content[curr_content]>) {
+				curr_content--;
+				console.log("curr_content减减="+curr_content);
+
+			}*/
+		}
+			
+		/*if*/
+		/*else
+			if () {
+				if (i>1) {
+					i--;
+				}
+				console.log("i="+i);
+		}*/
+		
+}
+		
+/*   去正文某位置   */
+function goContent(index){
+	var  goContent   =  document.getElementById('content_'+index).offsetTop;
+	goscroll(goContent);
+	
+}
+
+/*------- 滚动条方法 jqery-------*/
+function goscroll(index){
+	$('html,body').animate({scrollTop:index},500); 
+} 
+	</script>
+<!-- header end -->

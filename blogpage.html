@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlogPage</title>
+	<meta charset="utf-8">
+</head>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<style type="text/css">
+	/*s*/
+	.crumbs{width: 80%;background: rgba(255,255,255,0.5);margin:50px auto;height: 50px;line-height: 50px;}
+	.crumbs a{margin :0 10px 0 30px;}
+
+	.blog_banner{overflow: hidden;height: 100%;width: 100%;position: fixed;z-index: -10}
+	.blog_banner_img{height: 150%;width: 100%;background: url(images/img-7dd7b97c82962446e3f8b66b117bc696.jpg) no-repeat ;background-size: 100% auto;background-position: 0px -100px;}
+
+
+	.blogpage_center{width: 80%;background: rgba(255,255,255,0.7);margin: 0 auto;}
+
+	.blogpage_context{margin: 20px 60px;position: relative;padding: 0 0 80px 0;}
+	.blogpage_title{color: #353369;height: 50px;line-height: 50px;border-bottom: 1px solid #666;}
+	
+	.blogpage_tips{color: #666;font-size: 13px;padding-left: 20px;margin: 15px 0 20px 0;}
+	.blogpage_text{color: #333;font-size: 16px;text-align: center;overflow: hidden;}
+	.blogpage_tex p{}
+	.blogpage_text img{float: left;width: 45%;margin: 20px 2.5%;}
+	.blogpage_text p em{font-size: 18px;color: #4B8695;font-weight: bold;}
+	/*.blogpage_text img{max-width: 400px;max-height:200px;float: left; }*/
+	.blogpage_bottom{position: absolute;bottom: 25px ;left: 30px;font-size: 12px;color: #555; }
+	.blogpage_bottom>span{display: inline-block; padding: 0 10px 0 20px;}
+
+	.comments{width: 80%;background: rgba(255,255,255,0.7);margin: 50px auto 0 auto;padding: 30px 0 100px 0;position: relative;}
+	.comments_top{height: 40px;line-height: 40px;/*border-bottom: 1px solid #666;*/width: 90%;margin: 0 auto;}
+	.comments_top span {margin:  0 20px;font-size: 14px;}
+
+	.comment{width: 90%;margin: 0 auto;overflow: hidden;/*margin: 30px;*/border-top: 1px solid #888;padding: 30px 0;}
+	.comment_left{width: 10%;float: left;}
+	.visitor_photo{width: 50px;height: 50px;border-radius: 5px;background: url(images/blogger_photo.jpg) no-repeat ;background-size: auto 110%; margin: auto;}
+
+	.comment_right{width: 90%;float: right;}
+	.visitor_name{color: #26709A;}
+	.visitor_name span{color: #999;font-size: 14px;}
+	.visitor_comment{color: #555;font-size: 15px;padding: 10px  0  60px 5px;position: relative;}
+	.comment_bottom{position: absolute;font-size: 14px;color: #777;bottom: 10px;left: 0;}
+	.comment_bottom a{color:#26709A ;}
+
+
+	.author_reply{border-top: 1px solid #999;width: 97%;margin: 0 auto;padding: 15px 0 15px 0;}
+	.author_reply>div{margin-bottom: 10px;overflow: hidden;}
+	.reply_left{width: 10%;float: left;}
+	.author_photo{width: 37px;height: 37px;background: url(images/blogger_photo.jpg) no-repeat; background-size: auto 110%;border-radius: 3px; }
+	.reply_right{width: 90%;float: right;position: relative;}
+	.author_name{color: #26709A;font-size: 14px;padding: 0 0 20px 0;}
+	.author_name span{color: #555;margin: 0 20px;}
+	.reply_bottom{font-size: 12px;color: #777; position: absolute;bottom: 0px;left: 0px;}
+
+	.morecomment{position: absolute;bottom: 20px;text-align: center;left: 0;width: 100%;}
+	.morecomment a{color: #26709A}
+</style>
+<body>
+<!-- blog_banner begin -->
+	<div class="blog_banner">
+		<div class="blog_banner_img">
+			
+		</div>
+	</div>
+<!-- blog banner end -->
+	<div style="height: 70px;"></div>
+	<div class="crumbs ">
+			<a href="Blog.html">Home</a>>
+			<a href="Myblog.html">Blog</a>>
+			<a href="blogpage.html">title标题</a>
+
+	</div>
+	<div class="blogpage_center">
+		<div style="height: 1px;"></div>
+		<div class="blogpage_context">
+			<h2 class="blogpage_title">黑科大版《成都》|在松花江畔，聆听70年后的温柔</h2>
+			<p class="blogpage_tips">美文</p>
+			
+			<div class="blogpage_text">
+				<p > 岁月不居，时节如流；弦歌不辍，薪火相传。黑龙江科技大学在龙江大地上，以70年的上下求索、砥砺精进，见证了白山黑	水的斗转星移、沧桑巨变。2017年，黑龙江科技大学迎来70华诞。黑龙江科技大学大学生社团联合会创作科大版《成都》献礼	 黑龙江科技大学建校70周年，愿母校续写华章，再创辉煌 。
+				</p>
+				<!-- <div class="blogpage_music_wrapper">
+					<audio src="MP3/Kim Taylor - I Am You [mqms2].mp3" loop controls id="music"></audio>
+					<span class="" >play</span>
+					<span >成都</span>
+					<span>time</span>
+
+				</div> -->
+				<p><br><br><br>
+					每个城市都像是一个巨大的容器<br>
+					装载着每个人的记忆<br>
+					对于漂泊在外的人来说<br>
+					每个人心里都有一个名为“成都”的地方<br>
+					和一段回不去的旧时光<br>
+					那是珍藏在心里的回忆<br>
+					有人说<br>
+					一个人，一座城，一段情<br>
+					如果把歌词中的玉林路，小酒馆，牵过手的街头<br>
+					换成科大的劲牛塑记，图书馆，吃过的沁芳园、走过的松花江畔<br>
+					你又会想起什么呢?<br><br><br>
+
+
+					把《科大》唱给正青春的你<br><br><br>
+				</p>
+				<p>
+					<img src="images/640.jpg">
+					<em>
+						让我掉下眼泪的<br>
+						不只没走牛头
+						
+					</em>
+				</p>
+				<p>
+					<em>
+						让我依依不舍的
+
+					是松花江的柳
+					</em>
+					<img src="images/641.jpg">
+					
+				</p>
+				<p>
+					<img src="images/642.jpg">
+					<em>
+							故事能够写多久<br>
+
+一杯酒能温否？
+					</em>
+				
+				</p>
+				<p>
+					<img src="images/643.jpg">
+					<em>
+							让我转身回头的
+
+是科大的眼眸
+					</em>
+				
+				</p>
+				<p>
+					<img src="images/644.jpg">
+					<em>
+						分别总是在六月
+
+回忆是思念的愁
+					</em>
+					
+				</p>
+				<p>
+					<img src="images/645.jpg">
+					<em>
+						回首沁芳园门口
+
+飘香母校温柔
+					</em>
+					
+				</p>
+				<p>
+					<img src="images/646.jpg">
+					<em>
+						在这银装素裹校园里
+
+都有你我足迹
+					</em>
+					
+				</p>
+				<p>
+					<img src="images/647.jpg">
+					<em>
+						
+科大，带不走的
+
+只有你
+					</em>
+					
+
+				</p>
+				<p>
+					<img src="images/648.jpg">
+					<em>和我在文化广场上走一走，哦~
+						
+					</em>
+					
+				</p>
+				<p>
+					<img src="images/649.jpg">
+					<em>
+						
+					直到广场舞人群散去了
+
+也不停留
+					</em>
+				</p>
+				<p>
+					<img src="images/650.jpg">
+					<em>
+							清晨路过赛特门口
+
+科厦路上穿流不休
+					</em>
+				
+				</p>
+				<p>
+					<img src="images/651.jpg">
+					<em>
+						
+					走到田径场的门口
+
+看仪仗队精神抖擞
+					</em>
+				</p>
+				<p>
+					<img src="images/652.jpg">
+					<em>
+					相聚总是在九月
+
+时间在笔尖溜走
+						
+					</em>
+				</p>
+				<p>
+					<img src="images/653.jpg">
+			<em>
+					深秋泛黄的落叶
+亲吻着我额头
+				
+			</em>
+
+				</p>
+				<p>
+					<img src="images/654.jpg">
+					<em>
+						
+					在那座灯火辉煌的大桥下
+
+我们曾在一起
+					</em>
+				</p>
+				<p>
+					<img src="images/655.jpg">
+					<em>
+					对着星空呼喊的
+
+是青春的烙印
+						
+					</em>
+				</p>
+				<p>
+					<img src="images/656.jpg">
+					<em>
+						
+					和我在松花江畔上走一走，哦~
+					</em>
+				</p>
+				<p>
+					<img src="images/657.jpg">
+					<em>
+					直到点点渔火都熄灭了
+
+也不停留
+						
+					</em>
+				</p>
+				<p>
+					<img src="images/658.jpg">
+					<em>
+				你会指着远方星宿
+
+我会静看松江东流
+						
+					</em>
+				</p>
+				<p style="clear: both;"></p>
+				<p>
+					一座城市一所大学一首歌，<br>
+					歌里是毕业后的打拼者对科大的眷恋，<br>
+					歌里是即将毕业的学子们的离愁，<br>
+					歌里是生活在这里的科大人的感触，<br>
+					歌里是这里形形色色的人的过往和奋斗。<br>
+					等“所有的灯都熄灭了”，<br>
+					那些让你想起的稀松平常的温暖，<br>
+					必定会照亮你的来路和归途。<br><br><br>
+
+
+
+					《科大》，献给黑科大<br><br>
+
+					献给全体在校师生<br>
+					以及即将或已经毕业的你<br>
+					  科大，带不走的，只有你。<br><br><br><br><br><br>	
+
+				</p>
+			</div>
+			<p class="blogpage_bottom">
+				<span class="blogpage_time">2017-8-12</span>
+				<span class="blogpage_read">20013</span>
+			</p>
+		</div>
+
+		
+	</div>
+	<div class="comments">
+			<h4 class="comments_top">评论<span>(48)</span></h4>
+			<div class="comment">
+				<div class="comment_left">
+					<div class="visitor_photo"></div>
+				</div>
+				<div class="comment_right">
+					<p class="visitor_name">龙大大 <span>第48楼</span></p>
+					<div class="visitor_comment">Cillum laboris consequat, qui elit retro next level skateboard freegan hella. Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
+						<p class="comment_bottom">2017-08-06 14:11 <a href="javascript:;">回复</a></p>
+					 </div>
+					
+					<!-- 回复 -->
+					<div class="author_reply ">
+						<div>
+							<div class="reply_left">
+								<div class="author_photo"></div>
+							</div>
+							<div class="reply_right">
+								<p class="author_name">龙大大 <span>thankyou </span></p>
+								<p class="reply_bottom">2017-08-06 14:11</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="comment">
+				<div class="comment_left">
+					<div class="visitor_photo"></div>
+				</div>
+				<div class="comment_right">
+					<p class="visitor_name">龙大大 <span>第48楼</span></p>
+					<div class="visitor_comment">Cillum laboris consequat, qui elit retro next level skateboard freegan hella. Cillum laboris consequat, qui elit retro next level skateboard freegan hella. 
+						<p class="comment_bottom">2017-08-06 14:11 <a href="javascript:;">回复</a></p>
+					</div>
+					<div class="author_reply ">
+						<div>
+							<div class="reply_left">
+								<div class="author_photo"></div>
+							</div>
+							<div class="reply_right">
+								<p class="author_name">龙大大 <span>thankyou </span></p>
+								<p class="reply_bottom">2017-08-06 14:11</p>
+							</div>
+							
+						</div>
+						<div>
+							<div class="reply_left">
+								<div class="author_photo"></div>
+							</div>
+							<div class="reply_right">
+								<p class="author_name">龙大大 <span>thankyou </span></p>
+								<p class="reply_bottom">2017-08-06 14:11</p>
+							</div>
+							
+						</div>
+						<div>
+							<div class="reply_left">
+								<div class="author_photo"></div>
+							</div>
+							<div class="reply_right">
+								<p class="author_name">龙大大 <span>thankyou </span></p>
+								<p class="reply_bottom">2017-08-06 14:11</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="comment">
+				<div class="comment_left">
+					<div class="visitor_photo"></div>
+				</div>
+				<div class="comment_right">
+					<p class="visitor_name">龙大大 <span>第48楼</span></p>
+					<div class="visitor_comment">Cillum laboris consequat, qui elit retro next level skateboard freegan hella. Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
+						<p class="comment_bottom">2017-08-06 14:11 <a href="javascript:;">回复</a></p>
+					 </div>
+					
+				</div>
+			</div>
+			<div class="comment">
+				<div class="comment_left">
+					<div class="visitor_photo"></div>
+				</div>
+				<div class="comment_right">
+					<p class="visitor_name">龙大大 <span>第48楼</span></p>
+					<div class="visitor_comment">Cillum laboris consequat, qui elit retro next level skateboard freegan hella. Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
+						<p class="comment_bottom">2017-08-06 14:11 <a href="javascript:;">回复</a></p>
+					 </div>
+					
+				</div>
+			</div>
+			<div class="comment">
+				<div class="comment_left">
+					<div class="visitor_photo"></div>
+				</div>
+				<div class="comment_right">
+					<p class="visitor_name">龙大大 <span>第48楼</span></p>
+					<div class="visitor_comment">Cillum laboris consequat, qui elit retro next level skateboard freegan hella. Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
+						<p class="comment_bottom">2017-08-06 14:11 <a href="javascript:;">回复</a></p>
+					 </div>
+					
+				</div>
+			</div>
+			<div class="morecomment">
+				<a href="javascript:;" >加载更多</a>
+				
+			</div>
+		</div>
+</body>
+<script type="text/javascript">
+	
+</script>
+</html>
+
+
+
+<style type="text/css">
+	*{margin: 0;padding: 0;}
+	body{overflow-x: hidden;}
+	.headerbottom{height: 80px;background: rgba(0,0,0,0);position: absolute;width: 105%;z-index: 10;bottom: 0;color: #000;left: -2.5%;}
+	.headerTop{height: 80px;background: rgba(0,0,0,0);width: 105%;z-index: 10;top:0;color: #000;position: fixed;box-shadow: 0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left:-2.5%; }
+	.headerhidden{height: 0;position: fixed;top: -80px;background: rgba(0,0,0,0);width: 105%;z-index: 10;transition: 1s;box-shadow:0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left: -2.5%;}
+	.headeron{height: 80px;position: fixed;top: 0;background: rgba(0,0,0,0);width: 105%;z-index: 10;transition: 1s;box-shadow:0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left: -2.5%;}
+	#headerline{height: 0;position: absolute;top: 0px;}
+	.logo{width: 200px;height:80px;float: left;font-size: 25px;line-height:80px;text-align: center; color: #fff;background: url(icons/logo2.png) no-repeat ;background-size: 160% auto  ;background-position: 80px -10px; }
+	.navbar{width: 600px;float: right;height: 80px;}
+	.navbar ul li a{width: 50px;font-size: 20px;text-decoration: none;color: #fff;font-size: 16px;}
+	.navbar ul li:hover{text-shadow: 0px 0px 10px #fff;transform: scale(1.1);}
+	.navbar ul li{float: left;padding: 0 40px;text-align: center;line-height: 80px;list-style: none;}
+		/*返回顶部*/
+	#toheader{position: fixed;right: 20px;height: 60px;width: 60px;bottom:10px;background: rgba(0,0,0,0.5);border-radius: 50%;transition: 1s;cursor: pointer;opacity: 0;}
+	.toheader{border-radius: 50%;height: 60px;width: 60px;}
+	
+	.toheader:after{content: '';width: 25px;height: 25px;transform: rotate(-45deg);border-right:  2px solid #ccc;border-top: 2px solid #fff; position: absolute;left: 15.5px;top:22px;border-radius: 2px; }
+</style>
+	<div id="headerline"></div>
+	<div style="width: 100%;overflow: hidden;">
+		
+		<div id="header" class="headerTop">
+			<a class="logo" href="blog.html"></a>
+			<div class="navbar">
+				<ul>
+					<li><a href="blog.html">home</a></li>
+					<li><a href="#">works</a></li>
+					<li><a href="#">this's me</a></li>
+					<li><a href="#">contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- toheader -->
+	<div id="toheader" >
+		<div class="toheader" onclick="goscroll(0);">
+			
+		</div>
+	</div>
+<!-- toheader end -->
+	<script type="text/javascript">
+		var sign = 1000;//定义默认的向上滚与向下滚的边界
+var header = document.getElementById('header');
+var headerline = document.getElementById('headerline');
+
+/*--top导航栏及返回顶部的隐藏与出现  content的加载动画--*/
+var curr_content=1;
+var toheader = document.getElementById('toheader');
+	window.onscroll = function () {
+		var headerlineTop = headerline.getBoundingClientRect().top;//导航分界线，距离窗口可视区域顶部的距离
+		var  oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;//当前滚动条位置
+		if (oScrollTop<1000){
+			if (headerlineTop<=0) {
+			/*console.log('导航置顶');*/
+			header.className = 'headerTop';
+			}
+			else{
+				/*console.log('导航沉下');*/
+
+				header.className= 'headerbottom';
+			}
+			toheader.style.cssText +="bottom:10px;opacity:0;"
+		}
+		else{
+			if ( oScrollTop > (sign+200)) {
+			sign =  oScrollTop;//更新scrollTop
+			/*console.log('导航隐藏');*/
+			header.className = "headerhidden";
+			toheader.style.cssText +="bottom:10px;opacity:0;"
+			}
+			if ( oScrollTop< (sign-200) ) {
+			sign =  oScrollTop//更新scrollTop
+			/*console.log('导航出现');*/
+			header.className = "headeron";
+			toheader.style.cssText +="bottom:80px;opacity:1;"
+			}
+		}
+		
+
+		if (curr_content!=10) {
+			content[curr_content]=document.getElementById("content_"+curr_content).getBoundingClientRect().top;
+			if((content[curr_content]-100)<=0){
+					document.getElementById("content_"+curr_content).className+=' content'+curr_content+'end'+ ' contentend';
+					curr_content++;
+				
+				console.log("curr_content加加="+curr_content);
+			}	
+			/*if (content[curr_content]>) {
+				curr_content--;
+				console.log("curr_content减减="+curr_content);
+
+			}*/
+		}
+			
+		/*if*/
+		/*else
+			if () {
+				if (i>1) {
+					i--;
+				}
+				console.log("i="+i);
+		}*/
+		
+}
+		
+/*   去正文某位置   */
+function goContent(index){
+	var  goContent   =  document.getElementById('content_'+index).offsetTop;
+	goscroll(goContent);
+	
+}
+
+/*------- 滚动条方法 jqery-------*/
+function goscroll(index){
+	$('html,body').animate({scrollTop:index},500); 
+} 
+	</script>
+<!-- header end -->
+
+
+<div style="clear: both;"></div>
+ 	<div style="height: 100px;background: rgba(0,0,0,0.4);">
+	
+	</div> 
+	<!-- footer begin -->
+	<div id="footer">
+			<style type="text/css">
+				
+				#footer{height: 160px;width: 100%;background: /*#333*/ rgba(0,0,0,0.4);text-align: center;color: #9D9D9D;padding-top: 10px;}
+			#footer p{padding: 10px 0;}
+			#footer p:first-child{font-size: 25px;}
+			#footer button.btn{height: 40px;width: 40px;overflow:hidden;border: none;}
+			#footer button.btn img{height: 30px;width: 30px;}
+			</style>
+			<p >ALONG</p>
+			<p>
+				<button class="btn service-item"><img src="icons/qq_1t.png" class="service-icon"></button>
+				<button class="btn service-item"><img src="icons/qzone2.png" class="service-icon"></button>
+				<button class="btn service-item"><img src="icons/tencent_weibo.png" class="service-icon"></button>
+				<button class="btn service-item"><img src="icons/wechat_moment4.png" class="service-icon"></button>
+				<button class="btn service-item"><img src="icons/facebook.png" class="service-icon"></button>
+			</p>
+			<p>Copyright © 2016.Company name All rights reserved.网页模板</p>
+		
+		
+	</div>
+<!-- footer end -->

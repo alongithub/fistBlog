@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>h1</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	.clear{clear: both;}
+	.btn{height: 30px;width: 30px;border: 1px solid #000;position: absolute;top: 5px;z-index: 1;background: #fff;}
+	.btn1{left:5px;}
+	.btn2{left:40px;}
+	.img{
+		height: 300px;width: 150px;
+		position: relative;
+		overflow: hidden;
+	}
+	.img a{position: absolute;height: 300px;width: 150px;display: block;}
+	#image_a1{left: 0;top: 0;background: url(images/photo.jpeg);}
+	#image_a2{left: 150px;top: 0;background: url(images/main_bg.jpg);}
+</style>
+<body>
+<div class="img" id="img">
+	<div class="btn btn1" onmouseover="change1();">1</div>
+	<div class="btn btn2" onmouseover="change2();">2</div>
+	<a href="https://www.baidu.com" target="_blank" id="image_a1">图片1</a>
+	<a href="http://www.hao123.com" target="_blank" id="image_a2">图片2</a>
+</div>
+<script type="text/javascript">
+var image_a1=document.getElementById('image_a1');
+var image_a2=document.getElementById('image_a2');
+	function change1(){
+		image_a1.style.cssText+="left:0;";
+		image_a2.style.cssText+="left:150px;";
+	}
+	function change2(){
+		image_a1.style.cssText+="left:150px;";
+		image_a2.style.cssText+="left:0;";
+	}
+</script>
+</body>
+</html>

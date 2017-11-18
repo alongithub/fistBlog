@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Myblog</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	*{background: /*rgba(0,0,0,0.1)*/;margin: 0;padding:0;}
+	a{text-decoration: none;color: #333;text-align: center;}
+	.btn{border:1px solid #7F8C8D;color: #7F8C8D;border:1px solid #7F8C8D;background: rgba(0,0,0,0);border-radius: 5px;font-size: 16px;cursor: pointer;}
+	li{list-style:none;}
+	html,body{height: 100%;}
+	.blog_banner{overflow: hidden;height: 100%;width: 100%;position: fixed;z-index: -10}
+	.blog_banner_img{height: 150%;width: 100%;background: url(images/img-7dd7b97c82962446e3f8b66b117bc696.jpg) no-repeat ;background-size: 100% auto;background-position: 0px -100px;}
+	
+	.blog_navbar{width: 80%;background: rgba(255,255,255,0.9);margin:  auto ;height: 10%;}
+	.blog_navbar ul{height: 100%;}
+	.blog_navbar ul li{float: left;margin: 0 10px;padding: 0px 30px;font-weight: bold;height: 100%; }
+	.blog_navbar ul li a:hover{text-shadow: 0 0 2px #339;}
+	#blog_search{width: 170px;height: 27px;background: rgba(0,0,0,0);border-radius: 15px;padding: 0 40px 0 20px;}
+	
+	.blog_center{width:55%;background: rgba(255,255,255,0.7);margin: 0 0 0px 10% ;overflow: hidden;padding: 80px 0px;min-height: 100%;position: relative;float: left;}
+
+
+	.blog_wrapper{padding: 10px 30px 60px 30px;position: relative;background: rgba(255,255,255,0.6);/*margin: 0px auto 30px auto;*/width: 83%; transition: 0.3s;/*float: left;*/margin: 30px auto 0px 40px;}
+	.blog_wrapper:hover{box-shadow: -5px 5px 10px #000;background: rgba(255,255,255,0.8);}
+
+	.blog_right{background: rgba(255,255,255,0.7);transition: 0.3s;height: 450px;width: 25%;float: left;/*position: fixed;top: 0px;right: 10%;*/}
+
+	.blog_title{height: 60px;border-bottom: 1px solid #999;line-height: 60px;}
+	.blog_title a{color: #353369;}
+	.blog_title a:hover{color: #6866bc;}
+	.blog_tips{color: #666;font-size: 13px;padding-left: 20px;margin: 15px 0 20px 0;}
+	.blog_text{color: #333;font-size: 16px;overflow: hidden;}
+	.blog_text img{max-width: 400px;max-height:200px;float: left; }
+	.blog_bottom{position: absolute;bottom: 25px ;left: 30px;font-size: 12px;color: #555; }
+	.blog_bottom>span{display: inline-block; padding: 0 10px 0 20px;}
+
+
+	.blog_blogger{width: 90%;background: rgba(255,255,255,0.5);margin-top: 110px;padding-bottom: 20px;}
+	.blog_blogger_photo{height: 200px;width: 100%;text-align:center;}
+	.blog_blogger_photo img{height: 100px;width: 100px;border-radius: 50%;margin-top: 20px;}
+	.blog_blogger_name{color: #555;margin: 10px;}
+	.blog_blogger_signature{font-size: 14px;color: #666;}
+
+	.blog_blogger_contact{width: 100%;text-align: center;}
+	.blog_blogger_contact  .btn{height: 40px;width: 40px;border-radius: 50%;}
+	.blog_blogger_contact  .btn img{height: 40px;width: 40px;}
+	.tips{margin-top: 10px;width: 90%;background: rgba(255,255,255,0.5);overflow: hidden;padding: 10px 0;}
+	.tips ul li{float: left;margin: 13px;background: rgba(0,0,0,0.1);padding: 2px 7px;transition: 0.4s;}
+	.tips ul li:hover{background: rgba(0,0,0,0.3);border-radius: 5px;}
+	.tips ul li:hover a{color: #fff;}
+
+	.blog_visitors{width: 100%;height: 30px;}
+
+
+	.blog_pagination{position: absolute;bottom: 40px;text-align: center;width: 100%;}
+
+
+	.banner_center>div{font-size: 60px;margin: 70px 0 10px 0;}
+	.banner_center>span{border-top: 2px solid #fff;margin: 0 auto;width: 250px;display: inline-block;margin-bottom: 50px;}
+	.banner_center p{font-size: 18px;}
+	.banner_center{height: 60%;width: 58%;position: absolute;left: 21%;top: 15%;opacity: 1;text-align: center;
+	  -webkit-animation: banner 1s alternate;
+	  -moz-animation: banner 1s alternate;
+	  -o-animation: banner 1s alternate;
+	  animation: banner 1s alternate;
+	}
+
+	@keyframes banner {
+		0%{top:20%;opacity: 0;}
+		
+		100%{top: 15%;opacity: 1;}
+	}
+
+
+</style>
+
+<body>
+
+
+<!-- blog_banner begin -->
+	<div class="blog_banner">
+		<div class="blog_banner_img">
+			
+		</div>
+	</div>
+<!-- blog banner end -->
+	<div style="height: 90%;color: #fff">
+		
+		<div class="banner_center">
+			
+			<div class="title">FLY lIKE EGRET </div>
+			<span></span>
+			<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet qui dolorem</p>
+
+				
+		</div>
+
+	</div>
+	<div class="blog_navbar" id="blog_navbar">
+		<ul>
+			<li class="blog_navbar_li "><a href="javascript:;" onclick="">BLOG</a></li>
+			<li class="blog_navbar_li "><a href="javascript:;" onclick="">technology </a></li>
+			<li class="blog_navbar_li "><a href="javascript:;" onclick="">music</a></li>
+			<li class="blog_navbar_li "><a href="javascript:;" onclick="">life</a></li>
+			<li class="blog_navbar_li "><a href="javascript:;" onclick="">tips</a></li>
+			<li class="blog_navbar_li " style="float: right;">
+				<input type="text" name="search" placeholder="Please enter key words " id="blog_search">
+			</li>
+		</ul>
+	</div>
+	<div class="blog_center" id="blog_center">
+		<div class="blog_wrapper">
+			<h3 class="blog_title"><a href="blogpage.html" onclick="">Blog title博客标题</a></h2>
+			<p class="blog_tips">英文</p>
+			<p class="blog_text">
+			<img src="images/h.jpg">
+			I lied when I said I didn’t like you. I lied when I said I didn’t care. I lie every time I try to tell myself I will never fall for you.我说不爱你，那是假话；我说不在乎，那是假话；我告诉自己对你再不会有感觉了，那也是假话。
+			14、One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to hope for.要得到真正的快乐，我们只需拥有三样东西：有想做的事，有值得爱的人，有美丽的梦。
+			15、No matter how bad your heart has been broken, the world doesn’t stop for your grief. The sun comes right back up the next day.不管你有多痛苦，这个世界都不会为你停止转动。太阳依旧照样升起。</p>
+			<p class="blog_bottom">
+				<span class="blog_time">2017-8-12</span>
+				<span class="blog_read">20013</span>
+			</p>
+		</div>
+		<div class="blog_wrapper">
+			<h3 class="blog_title"><a href="javascript:;" onclick="">
+			</a></h2>
+			<p class="blog_tips">英文</p>
+			<p class="blog_text">
+			<img src="images/w.jpg">
+			I lied when I said I didn’t like you. I lied when I said I didn’t care. I lie every time I try to tell myself I will never fall for you.我说不爱你，那是假话；我说不在乎，那是假话；我告诉自己对你再不会有感觉了，那也是假话。
+			14、One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to hope for.要得到真正的快乐，我们只需拥有三样东西：有想做的事，有值得爱的人，有美丽的梦。
+			15、No matter how bad your heart has been broken, the world doesn’t stop for your grief. The sun comes right back up the next day.不管你有多痛苦，这个世界都不会为你停止转动。太阳依旧照样升起。</p>
+			<p class="blog_bottom">
+				<span class="blog_time">2017-8-12</span>
+				<span class="blog_read">20013</span>
+			</p>
+		</div>
+		<div class="blog_wrapper">
+			<h3 class="blog_title"><a href="blogpage.html" onclick="">Blog title博客标题</a></h2>
+			<p class="blog_tips">英文</p>
+			<p class="blog_text">
+			<img src="images/cat.png">
+			I lied when I said I didn’t like you. I lied when I said I didn’t care. I lie every time I try to tell myself I will never fall for you.我说不爱你，那是假话；我说不在乎，那是假话；我告诉自己对你再不会有感觉了，那也是假话。
+			14、One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to hope for.要得到真正的快乐，我们只需拥有三样东西：有想做的事，有值得爱的人，有美丽的梦。
+			15、No matter how bad your heart has been broken, the world doesn’t stop for your grief. The sun comes right back up the next day.不管你有多痛苦，这个世界都不会为你停止转动。太阳依旧照样升起。</p>
+			<p class="blog_bottom">
+				<span class="blog_time">2017-8-12</span>
+				<span class="blog_read">20013</span>
+			</p>
+		</div>
+		<div class="blog_wrapper">
+			<h3 class="blog_title"><a href="javascript:;" onclick="">Blog title博客标题</a></h2>
+			<p class="blog_tips">英文</p>
+			<p class="blog_text">I lied when I said I didn’t like you. I lied when I said I didn’t care. I lie every time I try to tell myself I will never fall for you.我说不爱你，那是假话；我说不在乎，那是假话；我告诉自己对你再不会有感觉了，那也是假话。
+			14、One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to hope for.要得到真正的快乐，我们只需拥有三样东西：有想做的事，有值得爱的人，有美丽的梦。
+			15、No matter how bad your heart has been broken, the world doesn’t stop for your grief. The sun comes right back up the next day.不管你有多痛苦，这个世界都不会为你停止转动。太阳依旧照样升起。</p>
+			<p class="blog_bottom">
+				<span class="blog_time">2017-8-12</span>
+				<span class="blog_read">20013</span>
+			</p>
+		</div>
+		<div class="blog_wrapper">
+			<h3 class="blog_title"><a href="javascript:;" onclick="">Blog title博客标题</a></h2>
+			<p class="blog_tips">英文</p>
+			<p class="blog_text">I lied when I said I didn’t like you. I lied when I said I didn’t care. I lie every time I try to tell myself I will never fall for you.我说不爱你，那是假话；我说不在乎，那是假话；我告诉自己对你再不会有感觉了，那也是假话。
+			14、One needs 3 things to be truly happy living in the world: some thing to do, some one to love, some thing to hope for.要得到真正的快乐，我们只需拥有三样东西：有想做的事，有值得爱的人，有美丽的梦。
+			15、No matter how bad your heart has been broken, the world doesn’t stop for your grief. The sun comes right back up the next day.不管你有多痛苦，这个世界都不会为你停止转动。太阳依旧照样升起。</p>
+			<p class="blog_bottom">
+				<span class="blog_time">2017-8-12</span>
+				<span class="blog_read">20013</span>
+			</p>
+		</div>
+		
+		<div class="blog_pagination">
+			<span >共13页，67条记录</span>
+			<span>首页</span>
+			<span>上一页</span>
+			<a href="javascript:;" onclick="blog_goPage();">1</a>
+			<a href="javascript:;" onclick="blog_goPage();">2</a>
+			<a href="javascript:;" onclick="blog_goPage();">3</a>
+			<a href="javascript:;" onclick="blog_goPage();">4</a>
+			<a href="javascript:;" onclick="blog_goPage();">5</a>
+			<span>下一页</span>
+			<span>尾页</span>
+			<input type="text" name="blog_goPage" >
+			<button onclick = "blog_goPage();">Go</button>
+		</div>
+
+	</div>
+	<div class="blog_right" id="blog_right">
+			<div class="blog_blogger" >
+				<div class="blog_blogger_photo">
+					<img src="images/blogger_photo.jpg">
+					<p class="blog_blogger_name">@龙大大</p>
+					<p class="blog_blogger_signature ">这个人很勤快，什么都没有留下</p>
+				</div>
+				<div class="blog_blogger_contact ">
+					<button class="btn service-item"><img src="icons/qq_1t.png" class="service-icon"></button>
+					<button class="btn service-item"><img src="icons/sina_weibo.png" class="service-icon"></button>
+					<button class="btn service-item"><img src="icons/tencent_weibo.png" class="service-icon"></button>
+					<button class="btn service-item"><img src="icons/wechat_moment4.png" class="service-icon"></button>
+					<button class="btn service-item"><img src="icons/facebook.png" class="service-icon"></button>
+				</div>
+			</div>
+			<div class="tips">
+				<ul>
+					<li><a href="javascript" onclick="search()">html5</a></li>
+					<li><a href="javascript" onclick="search()">css3</a></li>
+					<li><a href="javascript" onclick="search()">javascript</a></li>
+					<li><a href="javascript" onclick="search()">java</a></li>
+					<li><a href="javascript" onclick="search()">bootstrap</a></li>
+					<li><a href="javascript" onclick="search()">node.js</a></li>
+					<li><a href="javascript" onclick="search()">响应式</a></li>
+					<li><a href="javascript" onclick="search()">jquery</a></li>
+					<li><a href="javascript" onclick="search()">php</a></li>
+				</ul>
+			</div>
+			<div class="blog_visitors ">
+				<p >
+					今日访客
+					<span>3</span>
+					总浏览量
+					<span>2323</span>
+				</p>
+			</div>
+	</div>
+<!-- blog_banner end -->
+
+<!--  -->
+<div style="clear: both;"></div>
+ <div style="height: 100px;background: rgba(0,0,0,0.4);">
+	
+</div> 
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+
+<script type="text/javascript">
+	var blog_navbar = document.getElementById('blog_navbar');
+	var blog_center = document.getElementById('blog_center');
+	/*var blog_right = document.getElementById('blog_right');*/
+
+	window.onload = function() {
+		var blog_navbar_height = blog_navbar.offsetHeight;
+		$('.blog_navbar_li ').css('line-height',(blog_navbar_height-1)+'px');
+		var blog_center_height = blog_center.offsetHeight;
+		$('.blog_right').height(blog_center_height);
+	}
+</script>
+</html>
+<style type="text/css">
+	@keyframes icon-bounce {
+  0%, 100% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  25% {
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  50% {
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  85% {
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+}
+@-webkit-keyframes icon-bounce {
+  0%, 100% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  25% {
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  50% {
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  85% {
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+}
+@-moz-keyframes icon-bounce {
+  0%, 100% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  25% {
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  50% {
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  85% {
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+}
+@-o-keyframes icon-bounce {
+  0%, 100% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  25% {
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  50% {
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  85% {
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+}
+/*--- 添加动画 ---*/
+.service-item:hover .service-icon {
+  -webkit-animation: icon-bounce 0.5s alternate;/*infinite重复动画*/
+  -moz-animation: icon-bounce 0.5s alternate;/*alternate动画只执行一次*/
+  -o-animation: icon-bounce 0.5s alternate;
+  animation: icon-bounce 0.5s alternate;
+}
+
+/*--- icon-bounceTwo 滑过放大缩小动画 ---*/
+@keyframes icon-bounceTwo {
+  0%, 100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+@-webkit-keyframes icon-bounceTwo {
+
+ 0%, 100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+@-moz-keyframes icon-bounceTwo {
+  0%, 100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+@-o-keyframes icon-bounceTwo {
+  0%, 100% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+/*--- 添加动画 ---*/
+.service-item:hover .service-icon2 {
+  -webkit-animation: icon-bounceTwo 0.5s alternate;
+  -moz-animation: icon-bounceTwo 0.5s alternate;
+  -o-animation: icon-bounceTwo 0.5s alternate;
+  animation: icon-bounceTwo 0.5s alternate;
+}
+</style>
+
+
+
+<!-- header begin -->
+<style type="text/css">
+	.headerbottom{height: 80px;background: rgba(0,0,0,0);position: absolute;width: 105%;z-index: 10;bottom: 0;color: #000;}
+	.headerTop{height: 80px;background: rgba(0,0,0,0);width: 105%;z-index: 10;top:0;color: #000;position: fixed;box-shadow: 0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left:-2.5%; }
+	.headerhidden{height: 0;position: fixed;top: -80px;background: rgba(0,0,0,0);width: 105%;z-index: 10;transition: 1s;box-shadow:0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left: -2.5%;}
+	.headeron{height: 80px;position: fixed;top: 0;background: rgba(0,0,0,0);width: 105%;z-index: 10;transition: 1s;box-shadow:0px 36px 20px 0px #000 inset; text-shadow:  0 0 3px #05347C;left: -2.5%;}
+	#headerline{height: 0;position: absolute;top: 0px;}
+	.logo{width: 200px;height:80px;float: left;font-size: 25px;line-height:80px;text-align: center; color: #fff;background: url(icons/logo2.png) no-repeat ;background-size: 160% auto  ;background-position: 80px -10px; }
+	.navbar{width: 600px;float: right;height: 80px;}
+	.navbar ul li a{width: 50px;font-size: 20px;text-decoration: none;color: #fff;font-size: 16px;}
+	.navbar ul li:hover{text-shadow: 0px 0px 10px #fff;transform: scale(1.1);}
+	.navbar ul li{float: left;padding: 0 40px;text-align: center;line-height: 80px;list-style: none;}
+		/*返回顶部*/
+	#toheader{position: fixed;right: 20px;height: 60px;width: 60px;bottom:10px;background: rgba(0,0,0,0.5);border-radius: 50%;transition: 1s;cursor: pointer;opacity: 0;}
+	.toheader{border-radius: 50%;height: 60px;width: 60px;}
+	
+	.toheader:after{content: '';width: 25px;height: 25px;transform: rotate(-45deg);border-right:  2px solid #ccc;border-top: 2px solid #fff; position: absolute;left: 15.5px;top:22px;border-radius: 2px; }
+</style>
+	<div id="headerline"></div>
+	<div id="header" class="headerTop">
+		<a class="logo" href="blog.html"></a>
+		<div class="navbar">
+			<ul>
+				<li><a href="blog.html">home</a></li>
+				<li><a href="Myblog.html">blog</a></li>
+				<li><a href="javascript:;">this's me</a></li>
+				<li><a href="javascript:;">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- toheader -->
+	<div id="toheader" >
+		<div class="toheader" onclick="goscroll(0);">
+			
+		</div>
+	</div>
+<!-- toheader end -->
+	<script type="text/javascript">
+		var sign = 1000;//定义默认的向上滚与向下滚的边界
+var header = document.getElementById('header');
+var headerline = document.getElementById('headerline');
+
+/*--top导航栏及返回顶部的隐藏与出现  content的加载动画--*/
+var curr_content=1;
+var toheader = document.getElementById('toheader');
+	window.onscroll = function () {
+		var headerlineTop = headerline.getBoundingClientRect().top;//导航分界线，距离窗口可视区域顶部的距离
+		var  oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;//当前滚动条位置
+		if (oScrollTop<1000){
+			if (headerlineTop<=0) {
+			/*console.log('导航置顶');*/
+			header.className = 'headerTop';
+			}
+			else{
+				/*console.log('导航沉下');*/
+
+				header.className= 'headerbottom';
+			}
+			toheader.style.cssText +="bottom:10px;opacity:0;"
+		}
+		else{
+			if ( oScrollTop > (sign+200)) {
+			sign =  oScrollTop;//更新scrollTop
+			/*console.log('导航隐藏');*/
+			header.className = "headerhidden";
+			toheader.style.cssText +="bottom:10px;opacity:0;"
+			}
+			if ( oScrollTop< (sign-200) ) {
+			sign =  oScrollTop//更新scrollTop
+			/*console.log('导航出现');*/
+			header.className = "headeron";
+			toheader.style.cssText +="bottom:80px;opacity:1;"
+			}
+		}
+		
+
+		if (curr_content!=10) {
+			content[curr_content]=document.getElementById("content_"+curr_content).getBoundingClientRect().top;
+			if((content[curr_content]-100)<=0){
+					document.getElementById("content_"+curr_content).className+=' content'+curr_content+'end'+ ' contentend';
+					curr_content++;
+				
+				console.log("curr_content加加="+curr_content);
+			}	
+			/*if (content[curr_content]>) {
+				curr_content--;
+				console.log("curr_content减减="+curr_content);
+
+			}*/
+		}
+			
+		/*if*/
+		/*else
+			if () {
+				if (i>1) {
+					i--;
+				}
+				console.log("i="+i);
+		}*/
+		
+}
+		
+/*   去正文某位置   */
+function goContent(index){
+	var  goContent   =  document.getElementById('content_'+index).offsetTop;
+	goscroll(goContent);
+	
+}
+
+/*------- 滚动条方法 jqery-------*/
+function goscroll(index){
+	$('html,body').animate({scrollTop:index},500); 
+} 
+	</script>
+<!-- header end -->
+
+
+
+
+<!-- footer begin -->
+<div id="footer">
+		<style type="text/css">
+			#footer{height: 160px;width: 100%;background: /*#333*/ rgba(0,0,0,0.4);text-align: center;color: #9D9D9D;padding-top: 10px;}
+		#footer p{padding: 10px 0;}
+		#footer p:first-child{font-size: 25px;}
+		#footer button.btn{height: 40px;width: 40px;overflow:hidden;border: none;}
+		#footer button.btn img{height: 30px;width: 30px;}
+		</style>
+		<p >ALONG</p>
+		<p>
+			<button class="btn service-item"><img src="icons/qq_1t.png" class="service-icon"></button>
+			<button class="btn service-item"><img src="icons/qzone2.png" class="service-icon"></button>
+			<button class="btn service-item"><img src="icons/tencent_weibo.png" class="service-icon"></button>
+			<button class="btn service-item"><img src="icons/wechat_moment4.png" class="service-icon"></button>
+			<button class="btn service-item"><img src="icons/facebook.png" class="service-icon"></button>
+		</p>
+		<p>Copyright © 2016.Company name All rights reserved.网页模板</p>
+	
+	
+</div>
+<!-- footer end -->

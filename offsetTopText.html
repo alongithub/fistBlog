@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>offsetTopText</title>
+	<meta charset="utf-8">
+</head>
+	<style type="text/css">
+		*{height: 100%;margin: 5px 0;}
+		div	{
+			background: rgba(0,0,0,0.2);
+		}
+		body{
+			scroll-behavior: 
+		}
+	</style>
+<body>
+<button   onclick="javascript:todiv6();">div6</button>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="div6">hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+<div></div>
+<div></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+	function  toscroll(scrollNow,scrollTo) {
+		if (scrollNow>scrollTo) {
+			scrollNow-=10;
+			if (scrollNow<=scrollTo) {clearInterval(interval);
+					console.log('清除计时器');}
+		}
+		else
+		{
+			scrollNow+=10;
+			if (scrollNow>=scrollTo) {clearInterval(interval);
+					console.log('清除计时器');}
+		}
+		
+		window.scrollTo(0,scrollNow);
+		return scrollNow;
+
+	}
+	
+function todiv6(){
+	var div6=document.getElementById('div6');
+	var div6height = div6.offsetTop;
+	var scrollNow = document.documentElement.scrollTop||document.body.scrollTop;
+	
+	$('html,body').animate({scrollTop:1000},5000); 
+	}
+</script>
+</html>
